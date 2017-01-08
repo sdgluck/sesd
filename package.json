@@ -1,6 +1,6 @@
 {
   "name": "sesd",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Search esdiscuss.org",
   "main": "index.js",
   "author": "Sam Gluck <sdgluck@gmail.com>",
