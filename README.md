@@ -20,6 +20,7 @@ yarn add sesd
 ## Import
 
 ```js
+// ES2015
 import sesd from 'sesd'
 ```
 
