@@ -5,7 +5,7 @@ const https  = require('https')
 
 const includes = (a, b) => a.toLowerCase().includes(b.toLowerCase())
 
-/** Fetch a page of ES Discuss topics */
+/** Fetch a page of ES Discuss topics. */
 function getPage (page) {
   return new Promise((resolve, reject) => {
     let body = ''
