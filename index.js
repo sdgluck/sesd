@@ -20,9 +20,9 @@ function getPage (page, cb) {
   }).on('error', cb).end()
 }
 
-function findTopics (document, term, authorTerm) {
-  term = term.trim()
-  authorTerm = authorTerm && authorTerm.trim()
+function findTopics (document, opts) {
+  const term = opts.term.trim()
+  const author = opts.author && opts.author.trim()
 
   const $ = cheerio.load(document)
 
@@ -37,7 +37,7 @@ function findTopics (document, term, authorTerm) {
 
 
     if (includes(titleText, term)) {
-      if (!authorTerm || includes(authorText, authorTerm)) {
+      if (!author || includes(authorText, author)) {
         results.push({
           author: authorText,
           title: titleText,
@@ -79,7 +79,7 @@ module.exports = function (term, opts) {
         return
       }
 
-      results = results.concat(findTopics(document, term, opts.author))
+      results = results.concat(findTopics(document, { term, author: opts.author }))
 
       if (page < opts.limit) next()
       else resolve(results)
