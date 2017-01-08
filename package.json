@@ -1,0 +1,15 @@
+{
+  "name": "sesd",
+  "version": "1.0.0",
+  "description": "Search esdiscuss.org",
+  "main": "index.js",
+  "author": "Sam Gluck <sdgluck@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "dependencies": {
+    "cheerio": "^0.22.0",
+    "tape": "^4.6.3"
+  }
+}
