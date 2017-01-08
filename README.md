@@ -35,17 +35,31 @@ const sesd = require('sesd')
 
 Find topics with `term` in topic title or discussion.
 
-- __term__ {String} Search term
+- __term__ {String} Search term (give it an empty string to scoop up everything)
 - __[opts.limit]__ {Number} Number of pages to search, starting at 1
 - __[opts.author]__ {String} Author search term
 - __[opts.deep]__ {Boolean} Search topic contents for results (default: `false`)
 
 Returns a Promise that resolves with details of matched topics.
 
+Examples:
+
 ```js
-// Get topics on "prototype" in first five pages
+// e.g. Get topics about "prototype" on first five pages
 sesd('prototype', { limit: 5 }).then((results) => {
-  console.log(results) //=> [ { title, author, href } ]
+  console.log(results) //> [ { author, title, href } ]
+})
+```
+
+```js
+// e.g. Get all topics by an author
+sesd('', { author: 'Sam Gluck' }).then((results) => {
+  console.log(results)
+  // [{
+  //    author: 'Sam Gluck',
+  //    title: 'Why are ES6 class methods not automatically bound to the instance?',
+  //    href: '/topic/why-are-es6-class-methods-not-automatically-bound-to-the-instance'
+  // }]
 })
 ```
 
