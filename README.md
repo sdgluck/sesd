@@ -17,9 +17,20 @@ npm install sesd
 yarn add sesd
 ```
 
+## Import
+
+```js
+import sesd from 'sesd'
+```
+
+```js
+// CommonJS
+const sesd = require('sesd')
+```
+
 ## Usage
 
-### sesd(term[, opts]) : Promise
+### `sesd(term[, opts]) : Promise`
 
 Find topics with `term` in topic title or discussion.
 
