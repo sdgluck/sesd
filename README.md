@@ -1,6 +1,6 @@
 # sesd
 
-> :mag::scroll: Search [esdiscuss.org](https://esdiscuss.org)
+> :mag::scroll: API to search [esdiscuss.org](https://esdiscuss.org)
 
 Made with ❤ at [@outlandish](http://www.twitter.com/outlandish)
 
