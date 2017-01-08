@@ -51,8 +51,10 @@ function findTopics (document, term, authorTerm) {
 }
 
 module.exports = function (term, opts) {
-  const limit = opts.limit || Infinity
-  const author = opts.author || ''
+  opts = Object.assign({
+    limit: Infinity,
+    author: ''
+  }, opts)
 
   return new Promise((resolve, reject) => {
     let page = 1
@@ -77,9 +79,9 @@ module.exports = function (term, opts) {
         return
       }
 
-      results = results.concat(findTopics(document, term, author))
+      results = results.concat(findTopics(document, term, opts.author))
 
-      if (page < limit) next()
+      if (page < opts.limit) next()
       else resolve(results)
     })
 
