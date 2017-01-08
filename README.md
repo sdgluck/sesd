@@ -47,7 +47,7 @@ Examples:
 ```js
 // e.g. Get topics about "prototype" on first five pages
 sesd('prototype', { limit: 5 }).then((results) => {
-  console.log(results) //> [ { author, title, href } ]
+  console.log(results) //=> [ { author, title, href } ]
 })
 ```
 
@@ -55,11 +55,11 @@ sesd('prototype', { limit: 5 }).then((results) => {
 // e.g. Get all topics by an author
 sesd('', { author: 'Sam Gluck' }).then((results) => {
   console.log(results)
-  // [{
-  //    author: 'Sam Gluck',
-  //    title: 'Why are ES6 class methods not automatically bound to the instance?',
-  //    href: '/topic/why-are-es6-class-methods-not-automatically-bound-to-the-instance'
-  // }]
+  //=> [{
+  //     author: 'Sam Gluck',
+  //     title: 'Why are ES6 class methods not automatically bound to the instance?',
+  //     href: '/topic/why-are-es6-class-methods-not-automatically-bound-to-the-instance'
+  //   }]
 })
 ```
 
